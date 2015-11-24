@@ -6,7 +6,7 @@
   <!-- The Basics -->
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <parent>
     <groupId>com.github.jinahya</groupId>
@@ -92,9 +92,9 @@
     <url>https://github.com/jinahya/jinahya-parent</url>
     <tag>HEAD</tag>
   </scm>
-  <prerequisites/>
+  <prerequisites />
   <repositories />
   <pluginRepositories />
-  <distributionManagement/>
-  <profiles/>
+  <distributionManagement />
+  <profiles />
 </project>
