@@ -6,7 +6,7 @@
   <!-- The Basics -->
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.2</version>
   <packaging>pom</packaging>
   <parent>
     <groupId>com.github.jinahya</groupId>
@@ -102,4 +102,8 @@
     </site>
   </distributionManagement>
   <profiles />
+
+  <scm>
+    <tag>0.2</tag>
+  </scm>
 </project>
