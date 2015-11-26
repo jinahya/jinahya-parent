@@ -1,26 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- The Basics -->
-  <groupId>com.github.jinahya</groupId>
-  <artifactId>jinahya-parent</artifactId>
-  <version>0.3-SNAPSHOT</version>
-  <packaging>pom</packaging>
   <parent>
     <groupId>com.github.jinahya</groupId>
     <artifactId>ossrh-parent</artifactId>
     <version>0.3</version>
   </parent>
-  <dependencyManagement />
-  <dependencies />
+
+  <groupId>com.github.jinahya</groupId>
+  <artifactId>jinahya-parent</artifactId>
+  <version>0.3-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>jinahya-parent</name>
+  <description>parent pom for jinahya</description>
+  <url>https://github.com/jinahya/jinahya-parent</url>
+  <inceptionYear>2015</inceptionYear>
+  <organization />
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>jinahya</id>
+      <name>Jin Kwon</name>
+      <email>jinahya@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:jinahya/jinahya-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:jinahya/jinahya-parent.git</developerConnection>
+    <url>https://github.com/jinahya/jinahya-parent</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/jinahya/jinahya-parent/issues</url>
+  </issueManagement>
+  <distributionManagement>
+    <site>
+      <id>github</id>
+      <url>http://jinahya.github.io/jinahya-parent/sites/${project.version}/index.html</url>
+    </site>
+  </distributionManagement>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
-  <!-- Build Settings -->
   <build>
     <pluginManagement>
       <plugins>
@@ -28,6 +66,11 @@
           <groupId>com.github.github</groupId>
           <artifactId>site-maven-plugin</artifactId>
           <version>0.12</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>tidy-maven-plugin</artifactId>
+          <version>1.0-beta-1</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -54,52 +97,4 @@
       </plugin>
     </plugins>
   </build>
-  <reporting />
-
-  <!-- More Project Information -->
-  <!--<name>${project.artifactId}</name>-->
-  <description>parent pom for jinahya</description>
-  <!--<url>https://github.com/jinahya/${project.artifactId}</url>-->
-  <inceptionYear>2015</inceptionYear>
-  <licenses>
-    <license>
-      <name>Apache 2</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
-  <organization />
-  <developers>
-    <developer>
-      <id>jinahya</id>
-      <name>Jin Kwon</name>
-      <email>jinahya@gmail.com</email>
-    </developer>
-  </developers>
-  <contributors />
-
-  <!-- Environment Settings -->
-  <!--  <issueManagement>
-    <system>GitHub Issues</system>
-    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
-  </issueManagement>-->
-  <ciManagement />
-  <mailingLists />
-  <!--  <scm>
-    <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
-    <url>https://github.com/jinahya/${project.artifactId}</url>
-    <tag>HEAD</tag>
-  </scm>-->
-  <prerequisites />
-  <repositories />
-  <pluginRepositories />
-  <distributionManagement>
-    <site>
-      <id>github</id>
-      <url>http://jinahya.github.io/${project.artifactId}/sites/${project.version}/index.html</url>
-    </site>
-  </distributionManagement>
-  <profiles />
 </project>
