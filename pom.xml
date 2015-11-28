@@ -5,40 +5,28 @@
   <parent>
     <groupId>com.github.jinahya</groupId>
     <artifactId>ossrh-parent</artifactId>
-    <version>0.3.1</version>
+    <version>0.5</version>
   </parent>
 
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.3.1</version>
+  <version>0.5</version>
   <packaging>pom</packaging>
 
-  <name>${project.groupId}:${project.artifactId}</name>
+  <name>${project.artifactId}</name>
   <description>parent pom for jinahya</description>
   <url>https://github.com/jinahya/${project.artifactId}</url>
-  <licenses>
-    <license>
-      <name>Apache 2</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
 
   <scm>
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>git@github.com:jinahya/${project.artifactId}.git</url>
-    <tag>0.3.1</tag>
+    <tag>0.5</tag>
   </scm>
-  <issueManagement>
-    <system>GitHub Issues</system>
-    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
-  </issueManagement>
   <distributionManagement>
     <site>
       <id>github</id>
-      <url>http://jinahya.github.io/${project.artifactId}/sites/${project.version}/index.html</url>
+      <url>http://jinahya.github.io/${project.artifactId}/sites/${project.version}/</url>
     </site>
   </distributionManagement>
 
