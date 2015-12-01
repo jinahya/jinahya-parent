@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.github.jinahya</groupId>
     <artifactId>ossrh-parent</artifactId>
-    <version>0.5.1</version>
+    <version>0.6</version>
   </parent>
 
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.5.1</version>
+  <version>0.6</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -25,7 +25,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>git@github.com:jinahya/${project.artifactId}.git</url>
-    <tag>0.5.1</tag>
+    <tag>0.6</tag>
   </scm>
   <distributionManagement>
     <site>
