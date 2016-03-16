@@ -102,7 +102,7 @@
       <distributionManagement>
         <site>
           <id>jinahy.github.io</id>
-          <url>http://jinahya.github.io/${project.artifactId}/sites/${project.version}/</url>
+          <url>https://jinahya.github.io/${project.artifactId}/sites/${project.version}/</url>
         </site>
       </distributionManagement>
       <build>
@@ -116,14 +116,6 @@
               <path>sites/${project.version}</path>
               <merge>true</merge>
             </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>site</goal>
-                </goals>
-                <phase>site</phase>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>
