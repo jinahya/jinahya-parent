@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.github.jinahya</groupId>
     <artifactId>ossrh-parent</artifactId>
-    <version>0.8.1</version>
+    <version>0.8.2</version>
   </parent>
 
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.7.3</version>
+  <version>0.7.4</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -21,7 +21,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>0.7.3</tag>
+    <tag>0.7.4</tag>
   </scm>
 
   <properties>
@@ -40,29 +40,6 @@
       </plugins>
     </pluginManagement>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.4.0</version>
-        <executions>
-          <execution>
-            <id>git-submodule-update</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>initialize</phase>
-            <configuration>
-              <executable>git</executable>
-              <arguments>
-                <argument>submodule</argument>
-                <argument>update</argument>
-                <argument>--init</argument>
-                <argument>--recursive</argument>
-              </arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
@@ -127,6 +104,36 @@
               </execution>
             </executions>
           </plugin>
+        </plugins>
+      </build>
+    </profile> 
+    <profile>
+      <id>submodule</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.4.0</version>
+            <executions>
+              <execution>
+                <id>git-submodule-update</id>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <executable>git</executable>
+                  <arguments>
+                    <argument>submodule</argument>
+                    <argument>update</argument>
+                    <argument>--init</argument>
+                    <argument>--recursive</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>        
         </plugins>
       </build>
     </profile>
