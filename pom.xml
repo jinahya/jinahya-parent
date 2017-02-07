@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.github.jinahya</groupId>
     <artifactId>ossrh-parent</artifactId>
-    <version>0.8.2</version>
+    <version>0.8.3</version>
   </parent>
 
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.7.4</version>
+  <version>0.7.5</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -21,7 +21,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>0.7.4</tag>
+    <tag>0.7.5</tag>
   </scm>
 
   <properties>
@@ -114,7 +114,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>1.4.0</version>
+            <version>1.5.0</version>
             <executions>
               <execution>
                 <id>git-submodule-update</id>
