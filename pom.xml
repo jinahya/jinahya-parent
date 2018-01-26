@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.github.jinahya</groupId>
     <artifactId>ossrh-parent</artifactId>
-    <version>0.8.5</version>
+    <version>0.8.6</version>
   </parent>
 
   <groupId>com.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>0.7.7</version>
+  <version>0.7.8</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -21,7 +21,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>0.7.7</tag>
+    <tag>0.7.8</tag>
   </scm>
 
   <properties>
@@ -53,7 +53,7 @@
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-javadoc-plugin</artifactId>
-              <version>${maven-javadoc-plugin.version}</version>
+              <version>3.0.0</version>
               <configuration>
                 <useStandardDocletOptions>true</useStandardDocletOptions>
                 <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
