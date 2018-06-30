@@ -77,6 +77,7 @@
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-javadoc-plugin</artifactId>
+	      <version>${version.maven-javadoc-plugin}</version>
               <configuration>
                 <useStandardDocletOptions>true</useStandardDocletOptions>
                 <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
