@@ -17,6 +17,10 @@
   <description>parent pom for jinahya</description>
   <url>https://github.com/jinahya/${project.artifactId}</url>
 
+  <prerequisites>
+    <maven>3.0.4</maven>
+  </prerequisites>
+
   <scm>
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
@@ -24,16 +28,12 @@
     <tag>HEAD</tag>
   </scm>
 
-  <prerequisites>
-    <maven>3.0.4</maven>
-  </prerequisites>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <version.umlgraph>5.6.6</version.umlgraph>
   </properties>
-  
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -77,7 +77,7 @@
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-javadoc-plugin</artifactId>
-	      <version>${version.maven-javadoc-plugin}</version>
+              <version>${version.maven-javadoc-plugin}</version>
               <configuration>
                 <useStandardDocletOptions>true</useStandardDocletOptions>
                 <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
