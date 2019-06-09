@@ -10,12 +10,16 @@
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
-  <version>0.8.2-SNAPSHOT</version>
+  <version>0.8.4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
   <description>parent pom for jinahya</description>
   <url>https://github.com/jinahya/${project.artifactId}</url>
+
+  <prerequisites>
+    <maven>3.0.5</maven>
+  </prerequisites>
 
   <scm>
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
