@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.github.jinahya</groupId>
-    <artifactId>ossrh-parent</artifactId>
-    <version>1.0.6</version>
+    <groupId>io.github.jinahya</groupId>
+    <artifactId>central-parent</artifactId>
+    <version>0.0.2</version>
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
-  <version>0.9.4</version>
+  <version>0.9.5</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -20,7 +20,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>0.9.4</tag>
+    <tag>0.9.5</tag>
   </scm>
 
   <properties>
@@ -70,7 +70,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.2.5,)</version>
+                  <version>[3.6.3,)</version>
                 </requireMavenVersion>
               </rules>
             </configuration>
