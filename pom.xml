@@ -3,9 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.github.jinahya</groupId>
-    <artifactId>ossrh-parent</artifactId>
-    <version>1.0.6</version>
+    <groupId>io.github.jinahya</groupId>
+    <artifactId>central-parent</artifactId>
+    <version>0.0.2</version>
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
@@ -70,7 +70,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.2.5,)</version>
+                  <version>[3.6.3,)</version>
                 </requireMavenVersion>
               </rules>
             </configuration>
