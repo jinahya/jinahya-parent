@@ -5,11 +5,11 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>central-parent</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
-  <version>0.9.6</version>
+  <version>0.9.7</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -20,7 +20,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>0.9.6</tag>
+    <tag>0.9.7</tag>
   </scm>
 
   <properties>
