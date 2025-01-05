@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>central-parent</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
@@ -44,7 +44,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.17.1</version>
+        <version>2.18.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
