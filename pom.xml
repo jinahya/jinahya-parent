@@ -5,11 +5,11 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>central-parent</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -20,7 +20,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>1.0.1</tag>
+    <tag>1.0.2</tag>
   </scm>
 
   <properties>
@@ -44,7 +44,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.18.0</version>
+        <version>2.19.1</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
