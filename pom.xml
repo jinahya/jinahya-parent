@@ -5,22 +5,44 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>central-parent</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
   </parent>
 
   <artifactId>jinahya-parent</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.6</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
   <description>parent pom for jinahya</description>
   <url>https://github.com/jinahya/${project.artifactId}</url>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>onacit</id>
+      <name>Jin Kwon</name>
+      <email>onacit@gmail.com</email>
+      <url>https://github.com/onacit</url>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>Asia/Seoul</timezone>
+    </developer>
+  </developers>
 
   <scm>
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>1.0.4</tag>
+    <tag>1.0.6</tag>
   </scm>
 
   <properties>
@@ -44,7 +66,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.20.1</version>
+        <version>2.21.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
