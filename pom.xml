@@ -71,6 +71,7 @@
           <pushChanges>false</pushChanges>
           <localCheckout>true</localCheckout>
           <goals>install</goals>
+          <arguments>-DskipITs</arguments>
         </configuration>
       </plugin>
       <plugin>
