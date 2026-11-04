@@ -5,12 +5,13 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>central-parent</artifactId>
-    <version>0.1.5</version>
+    <!-- https://central.sonatype.com/artifact/io.github.jinahya/central-parent/versions -->
+    <version>0.1.6</version>
   </parent>
 
   <groupId>io.github.jinahya</groupId>
   <artifactId>jinahya-parent</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -43,7 +44,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com/jinahya/${project.artifactId}.git</url>
-    <tag>1.1.1</tag>
+    <tag>1.1.2</tag>
   </scm>
 
   <properties>
@@ -78,12 +79,12 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.22.0</version>
+        <version>2.23.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.6.3</version>
+        <version>3.7.0</version>
         <executions>
           <execution>
             <id>enforce-dependency-convergence</id>
