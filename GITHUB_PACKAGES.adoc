@@ -1,0 +1,185 @@
+= GitHub Packages
+:toc:
+
+Using https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages[GitHub Packages] as an alternative of Maven Central.
+
+== Accounts
+
+[cols="1,3"]
+|===
+| Account | Role
+
+| `jinahya`
+| Owner. Packages are listed under this account. The only account that can delete Maven/Gradle packages.
+
+| `onacit`
+| Collaborator (write) on every `jinahya` repository. Codes, releases, and deploys.
+|===
+
+Packages are linked to a single shared repository, `jinahya/packages` (the name is yet to be decided).
+
+== Addresses
+
+[cols="1,3,3,2,3"]
+|===
+| Type | Publish | Install | Package name | Linking to `jinahya/packages`
+
+| Maven
+| `https://maven.pkg.github.com/jinahya/packages`
+| `https://maven.pkg.github.com/jinahya/*`
+| `groupId:artifactId` (lowercase `artifactId`)
+| The URL itself
+
+| Gradle
+| `https://maven.pkg.github.com/jinahya/packages`
+| `https://maven.pkg.github.com/jinahya/*`
+| Same as Maven
+| The URL itself
+
+| npm
+| `https://npm.pkg.github.com`
+| `https://npm.pkg.github.com` (for the `@jinahya` scope)
+| `@jinahya/<name>`
+| `repository` field in `package.json`
+
+| Container
+| `ghcr.io/jinahya/<image>:<tag>`
+| Same
+| `<image>`
+| Label `org.opencontainers.image.source=https://github.com/jinahya/packages`
+
+| NuGet
+| `https://nuget.pkg.github.com/jinahya/index.json`
+| Same
+| Package ID
+| `RepositoryUrl` in `.csproj`
+
+| RubyGems
+| `https://rubygems.pkg.github.com/jinahya`
+| Same
+| Gem name
+| `github_repo` in the gemspec metadata
+|===
+
+* The owner always comes first and must be lowercase.
+* Only the Maven/Gradle URL contains the repository name. Maven appends the layout (`groupId/artifactId/version/file`) after it.
+
+== Rules
+
+Authentication::
+A personal access token (classic) of `onacit`, with username `onacit`.
+`write:packages` to publish, `read:packages` to install.
+In GitHub Actions, `GITHUB_TOKEN` with `permissions: packages: write`.
+
+Installing::
+Requires a token for Maven, Gradle, npm, NuGet, and RubyGems, *even for public packages*.
+Public container images can be pulled anonymously.
+
+Releases and snapshots::
+Go to the same Maven address. Separate `maven-releases`/`maven-snapshots` repositories are not supported.
+Old snapshot versions are not cleaned up automatically.
+
+Deleting::
+Requires admin access to the repository, so only `jinahya` can delete Maven/Gradle packages.
+
+Not supported::
+PyPI, Go, Helm, generic files (use GitHub Releases), and proxying Maven Central or npmjs.
+
+Mixing with Maven Central::
+A GitHub artifact may depend on Central artifacts, but not the reverse.
+Keep shared parents and widely used libraries on Central.
+
+== Maven
+
+=== `pom.xml`
+
+[source,xml]
+----
+<profile>
+  <id>github</id>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/jinahya/packages</url>
+    </repository>
+    <snapshotRepository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/jinahya/packages</url>
+    </snapshotRepository>
+  </distributionManagement>
+</profile>
+----
+
+[source,sh]
+----
+mvn -Pgithub deploy
+----
+
+`release:perform` only installs (`<goals>install</goals>`). Deploy releases separately, from the release tag.
+
+[source,sh]
+----
+mvn release:prepare release:perform   # local only: tag + install
+git checkout <version>                # the release tag
+mvn -Pcentral-releases deploy         # to Maven Central
+mvn -Pgithub deploy                   # to jinahya/packages
+----
+
+* Run `-Pcentral-releases` and `-Pgithub` separately. The `central-publishing-maven-plugin` takes over the `deploy` phase.
+* Artifacts deployed with `-Pgithub` alone are not signed.
+* Releases of `jinahya-parent` must stay on Maven Central as long as any of its children are on Maven Central.
+
+=== `~/.m2/settings.xml`
+
+[source,xml]
+----
+<servers>
+  <server>
+    <id>github</id>
+    <username>onacit</username>
+    <password>${env.GITHUB_TOKEN}</password>
+  </server>
+</servers>
+<profiles>
+  <profile>
+    <id>github-packages</id>
+    <repositories>
+      <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/jinahya/*</url>
+        <snapshots><enabled>true</enabled></snapshots>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+<activeProfiles>
+  <activeProfile>github-packages</activeProfile>
+</activeProfiles>
+----
+
+* The profile id must not be `github`. `<activeProfiles>` also activates POM profiles of the same id, which would make every build deploy to GitHub.
+* The repository id stays `github`, to match the `<server>`.
+
+=== Downstreams
+
+Children of `jinahya-parent` (`1.1.3` or later) choose where to deploy.
+
+[cols="2,3"]
+|===
+| Command | Goes to
+
+| `mvn -Pcentral-releases deploy`
+| Maven Central
+
+| `mvn -Pcentral-snapshots deploy`
+| Maven Central snapshots
+
+| `mvn -Pgithub deploy`
+| `jinahya/packages`
+|===
+
+== Setup
+
+. Create the `jinahya/packages` repository.
+. Add `onacit` as a collaborator.
+. Point the `github` profile to `https://maven.pkg.github.com/jinahya/packages`.
