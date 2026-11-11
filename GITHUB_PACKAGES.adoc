@@ -113,8 +113,21 @@ Keep shared parents and widely used libraries on Central.
 [source,sh]
 ----
 mvn -Pgithub deploy
-mvn release:perform -Darguments=-Pgithub
 ----
+
+`release:perform` only installs (`<goals>install</goals>`). Deploy releases separately, from the release tag.
+
+[source,sh]
+----
+mvn release:prepare release:perform   # local only: tag + install
+git checkout <version>                # the release tag
+mvn -Pcentral-releases deploy         # to Maven Central
+mvn -Pgithub deploy                   # to jinahya/packages
+----
+
+* Run `-Pcentral-releases` and `-Pgithub` separately. The `central-publishing-maven-plugin` takes over the `deploy` phase.
+* Artifacts deployed with `-Pgithub` alone are not signed.
+* Releases of `jinahya-parent` must stay on Maven Central as long as any of its children are on Maven Central.
 
 === `~/.m2/settings.xml`
 
