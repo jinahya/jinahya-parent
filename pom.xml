@@ -91,4 +91,21 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <!-- https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry -->
+      <id>github</id>
+      <distributionManagement>
+        <repository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/jinahya/packages</url>
+        </repository>
+        <snapshotRepository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/jinahya/packages</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+  </profiles>
 </project>
